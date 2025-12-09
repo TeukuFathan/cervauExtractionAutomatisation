@@ -1,3 +1,4 @@
+import os
 import slicer
 
 def run_skullstrip(input_path):
@@ -47,15 +48,18 @@ def run_threshold(inputBrain):
     return brainThresholdVolume
 
 
-
-def sauvegarde(brainThresholdVolume,input_path) :
+def sauvegarde(brainThresholdVolume,output_path, index) :
     #Renommage
-    slicer.util.saveNode(
-        brainThresholdVolume,
-        input_path.replace(".nii", "_extracted.nii")
-    )
+    # Create full output path
+    filename = f"extracted_{index:03d}.nii"
+    output_file = os.path.join(output_path, filename)
+
+
+    # Save node
+    slicer.util.saveNode(brainThresholdVolume, output_file)
     removeData()
-    print("Enregistre et data cleared !")
+    print("Enregistre")
 
 def removeData():
     slicer.mrmlScene.Clear(0)
+    print("Data cleared !")
