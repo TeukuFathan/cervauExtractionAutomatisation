@@ -54,4 +54,8 @@ def sauvegarde(brainThresholdVolume,input_path) :
         brainThresholdVolume,
         input_path.replace(".nii", "_extracted.nii")
     )
-    print("Done.")
+    removeData()
+    print("Enregistre et data cleared !")
+
+def removeData():
+    slicer.mrmlScene.Clear(0)
