@@ -1,2 +1,6 @@
-output/.gitkeep
-resources/.gitkeep
+output/*
+resources/*
+
+# Keep the placeholder files
+!output/.gitkeep
+!resources/.gitkeep
