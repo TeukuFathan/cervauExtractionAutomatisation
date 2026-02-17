@@ -1,10 +1,3 @@
-# Group : 
-# - Teuku Fathan Ferdiansyah
-# - Mohammed Salim Ktari
-# - Ahmed Yassine Hassairi
-# Project: XIRM( Automation d'extraction de cervaux )
-# Year: 2025
-
 import path_manager
 import skullstripper
 
